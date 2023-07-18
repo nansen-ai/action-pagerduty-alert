@@ -4,6 +4,8 @@
   "description": "GitHub Action to send a critical PagerDuty alert",
   "main": "index.js",
   "scripts": {
+    "start": "npm run build && node dist/index.js",
+    "build": "ncc build index.js --out dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
