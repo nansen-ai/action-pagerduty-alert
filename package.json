@@ -8,18 +8,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Entle/action-pagerduty-alert.git"
+    "url": "git+https://github.com/nansen-ai/action-pagerduty-alert.git"
   },
   "keywords": [
     "PagerDuty",
     "Actions"
   ],
-  "author": "Johannes Jonker <johannes@entle.co>",
+  "contributors": [
+    {
+      "name" : "Johannes Jonker",
+      "email" : "johannes@entle.co"
+    }
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Entle/action-pagerduty-alert/issues"
+    "url": "https://github.com/nansen-ai/action-pagerduty-alert/issues"
   },
-  "homepage": "https://github.com/Entle/action-pagerduty-alert#readme",
+  "homepage": "https://github.com/nansen-ai/action-pagerduty-alert#readme",
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@actions/github": "^4.0.0",
