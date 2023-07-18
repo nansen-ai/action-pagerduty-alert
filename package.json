@@ -18,6 +18,10 @@
     {
       "name" : "Johannes Jonker",
       "email" : "johannes@entle.co"
+    },
+    {
+      "name" : "Tarvi Pillessaar",
+      "email" : "tarvi.p@nansen.ai"
     }
   ],
   "license": "MIT",
@@ -26,8 +30,8 @@
   },
   "homepage": "https://github.com/nansen-ai/action-pagerduty-alert#readme",
   "dependencies": {
-    "@actions/core": "^1.2.6",
-    "@actions/github": "^4.0.0",
-    "axios": "^0.21.1"
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1",
+    "axios": "^1.4.0"
   }
 }
