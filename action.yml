@@ -4,9 +4,20 @@ inputs:
   pagerduty-integration-key:
     description: 'The integration key for your PagerDuty service'
     required: true
-  pagerduty-dedup-key:
+  alert-dedup-key:
     description: 'The key used to correlate PagerDuty triggers, acknowledges, and resolves for the same alert.'
     required: false
+  alert-summary:
+    description: 'A custom summary for your PagerDuty alert'
+    required: false
+  alert-severity:
+    description: 'The severity level used when creating a PagerDuty alert'
+    required: false
+    default: critical
+  alert-event-action:
+    description: 'The type of alert event. Can be trigger, acknowledge or resolve'
+    required: false
+    default: trigger
 runs:
   using: 'node16'
   main: 'dist/index.js'
