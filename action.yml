@@ -9,7 +9,7 @@ inputs:
     required: false
 runs:
   using: 'node16'
-  main: 'index.js'
+  main: 'dist/index.js'
 branding:
   icon: 'alert-triangle'
   color: 'red'
