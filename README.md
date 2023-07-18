@@ -11,13 +11,14 @@ Sends a critical PagerDuty alert, e.g. on action failure.
 
 ## Inputs
 
-`pagerduty-integration-key`
+| PARAMETERS                  | REQUIRED | DESCRIPTION                                                                                   | DEFAULT    |
+| --------------------------- | -------- | --------------------------------------------------------------------------------------------- | ---------- |
+| `pagerduty-integration-key` | Yes      | The integration key for your PagerDuty service                                                |            |
+| `alert-dedup-key`           | No       | A `dedup_key` for your alert. This will enable PagerDuty to coalesce multiple alerts into one |            |
+| `alert-summary`             | No       | A custom summary for your PagerDuty alert                                                     |            |
+| `alert-severity`            | No       | The severity level used when creating a PagerDuty alert                                       | `critical` |
+| `alert-event-action`        | No       | The type of alert event. Can be `trigger`, `acknowledge` or `resolve`                         | `trigger`  |
 
-**Required:** the integration key for your PagerDuty service
-
-`pagerduty-dedup-key`
-
-**Optional:** a `dedup_key` for your alert. This will enable PagerDuty to coalesce multiple alerts into one.
 More documentation is available [here](https://developer.pagerduty.com/docs/events-api-v2/trigger-events/).
 
 ## Example usage
@@ -27,8 +28,23 @@ In your `steps`:
 ```yaml
 - name: Send PagerDuty alert on failure
   if: ${{ failure() }}
-  uses: nansen-ai/action-pagerduty-alert@0.2.0
+  uses: nansen-ai/action-pagerduty-alert@v0.5
   with:
     pagerduty-integration-key: '${{ secrets.PAGERDUTY_INTEGRATION_KEY }}'
-    pagerduty-dedup-key: github_workflow_failed
+    alert-dedup-key: github_workflow_failed
 ```
+
+Advanced usage:
+```yaml
+- name: Send PagerDuty event
+  if: always() && (job.status == 'failure' || job.status == 'success')
+  uses: nansen-ai/action-pagerduty-alert@v0.5
+  with:
+      pagerduty-integration-key: '${{ secrets.PAGERDUTY_INTEGRATION_KEY }}'
+      alert-dedup-key: github_workflow_failed
+      alert-severity: 'warning'
+      alert-event-action: ${{ job.status == 'failure' && 'trigger' || 'resolve' }}
+      alert-summary: "My custom alert"
+```
+
+Usign this advanced example above incidents are also resolved when action finishes successfully.
