@@ -19,7 +19,7 @@ Sends a critical PagerDuty alert, e.g. on action failure.
 | `alert-severity`            | No       | The severity level used when creating a PagerDuty alert                                       | `critical` |
 | `alert-event-action`        | No       | The type of alert event. Can be `trigger`, `acknowledge` or `resolve`                         | `trigger`  |
 
-More documentation is available [here](https://developer.pagerduty.com/docs/events-api-v2/trigger-events/).
+More details about deduplication key and other parameters can be found [here](https://developer.pagerduty.com/docs/events-api-v2/trigger-events/).
 
 ## Example usage
 
