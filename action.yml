@@ -19,7 +19,7 @@ inputs:
     required: false
     default: trigger
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
 branding:
   icon: 'alert-triangle'
