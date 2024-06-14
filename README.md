@@ -28,7 +28,7 @@ In your `steps`:
 ```yaml
 - name: Send PagerDuty alert on failure
   if: ${{ failure() }}
-  uses: nansen-ai/action-pagerduty-alert@v0.5
+  uses: nansen-ai/action-pagerduty-alert@v0.6
   with:
     pagerduty-integration-key: '${{ secrets.PAGERDUTY_INTEGRATION_KEY }}'
     alert-dedup-key: github_workflow_failed
@@ -38,7 +38,7 @@ Advanced usage:
 ```yaml
 - name: Send PagerDuty event
   if: always() && (job.status == 'failure' || job.status == 'success')
-  uses: nansen-ai/action-pagerduty-alert@v0.5
+  uses: nansen-ai/action-pagerduty-alert@v0.6
   with:
       pagerduty-integration-key: '${{ secrets.PAGERDUTY_INTEGRATION_KEY }}'
       alert-dedup-key: github_workflow_failed
