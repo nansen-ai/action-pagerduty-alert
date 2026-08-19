@@ -34,6 +34,17 @@
   "dependencies": {
     "@actions/core": "^1.10.0",
     "@actions/github": "^5.1.1",
-    "axios": "^1.4.0"
+    "axios": "^1.15.2"
+  },
+  "overrides": {
+    "@actions/http-client": {
+      "undici": "https://npm.aikido.io/e0e56490270259d11040/undici@5.28.4-aikido.2"
+    },
+    "@actions/core": {
+      "undici": "https://npm.aikido.io/e0e56490270259d11040/undici@5.28.4-aikido.2"
+    },
+    "@actions/github": {
+      "undici": "https://npm.aikido.io/e0e56490270259d11040/undici@5.28.4-aikido.2"
+    }
   }
 }
